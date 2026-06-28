@@ -1,0 +1,22 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Foregrounds & borders" subtitle="Slate text ramp + border ladder on navy." -->
+<!DOCTYPE html><html><head><meta charset="UTF-8"><link rel="stylesheet" href="../styles.css">
+<style>
+  body{margin:0;background:var(--bg-base);padding:24px;font-family:var(--font-display);display:flex;gap:28px;align-items:center}
+  .txt span{display:block}
+  .t1{color:var(--fg-1);font-size:20px;font-weight:700}
+  .t2{color:var(--fg-2);font-size:15px;margin-top:4px}
+  .t3{color:var(--fg-3);font-size:13px;font-family:var(--font-mono);margin-top:4px}
+  .bx{display:flex;gap:10px}
+  .b{width:64px;height:64px;border-radius:8px;background:var(--bg-surface);display:flex;align-items:flex-end;padding:6px;font-family:var(--font-mono);font-size:9px;color:var(--fg-3)}
+</style></head><body>
+  <div class="txt">
+    <span class="t1">fg-1 · Headings #F1F5F9</span>
+    <span class="t2">fg-2 · Body & descriptions #94A3B8</span>
+    <span class="t3">fg-3 · Muted, placeholders #475569</span>
+  </div>
+  <div class="bx">
+    <div class="b" style="border:1px solid #162035">subtle</div>
+    <div class="b" style="border:1px solid #1E2D40">border</div>
+    <div class="b" style="border:1px solid #2A4060">accent</div>
+  </div>
+</body></html>

@@ -1,0 +1,95 @@
+<!-- @dsCard group="Landing" viewport="1200x820" name="Bloqr landing site" subtitle="Full marketing page — nav, hero, comparison, features, pricing" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bloqr — The privacy you didn't know you needed.</title>
+<link rel="icon" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg-base); color: var(--fg-1); -webkit-font-smoothing: antialiased; }
+  /* hero glow handled per-section; page base is navy */
+  .modal-backdrop {
+    position: fixed; inset: 0; z-index: 100;
+    background: rgba(7,11,20,0.6); backdrop-filter: blur(2px);
+    display: flex; align-items: center; justify-content: center; padding: 24px;
+  }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel" src="Nav.jsx"></script>
+<script type="text/babel" src="Hero.jsx"></script>
+<script type="text/babel" src="Problem.jsx"></script>
+<script type="text/babel" src="HowItWorks.jsx"></script>
+<script type="text/babel" src="Features.jsx"></script>
+<script type="text/babel" src="Pricing.jsx"></script>
+<script type="text/babel" src="Footer.jsx"></script>
+<script type="text/babel">
+  const { Badge, Button, Input } = window.BloqrDesignSystem_097f61;
+
+  function WaitlistModal({ onClose }) {
+    const [done, setDone] = React.useState(false);
+    return (
+      <div className="modal-backdrop" onClick={onClose}>
+        <div onClick={(e) => e.stopPropagation()} style={{
+          width: 'min(440px, 100%)', background: 'var(--bg-overlay)',
+          border: '1px solid var(--border-accent)', borderRadius: 16, padding: 32,
+          boxShadow: 'var(--shadow-lg)',
+        }}>
+          {done ? (
+            <div style={{ textAlign: 'center' }}>
+              <Badge tone="cyan" dot>On the list</Badge>
+              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 22, fontWeight: 800, letterSpacing: '-0.02em', color: 'var(--fg-1)', margin: '18px 0 8px' }}>You're on the list.</h3>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: 'var(--fg-2)', margin: '0 0 24px', lineHeight: 1.5 }}>We'll be in touch. No spam — that would be deeply off-brand.</p>
+              <Button variant="outline" onClick={onClose} style={{ width: '100%', justifyContent: 'center' }}>Close</Button>
+            </div>
+          ) : (
+            <React.Fragment>
+              <Badge tone="orange" dot>Now in beta</Badge>
+              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 22, fontWeight: 800, letterSpacing: '-0.02em', color: 'var(--fg-1)', margin: '18px 0 8px' }}>Get early access.</h3>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: 'var(--fg-2)', margin: '0 0 20px', lineHeight: 1.5 }}>One account, every device. Bring your own vendor or use ours.</p>
+              <Input label="Email" placeholder="you@example.com" hint="We'll only email about launch." style={{ marginBottom: 18 }} />
+              <Button variant="primary" onClick={() => setDone(true)} style={{ width: '100%', justifyContent: 'center' }}>Join the waitlist <span aria-hidden>→</span></Button>
+            </React.Fragment>
+          )}
+        </div>
+      </div>
+    );
+  }
+
+  function App() {
+    const [active, setActive] = React.useState('why');
+    const [modal, setModal] = React.useState(false);
+    const open = () => setModal(true);
+
+    React.useEffect(() => {
+      const el = document.getElementById(active);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, [active]);
+
+    return (
+      <React.Fragment>
+        <window.KitNav active={active} setActive={setActive} onLaunch={open} />
+        <window.KitHero onLaunch={open} />
+        <div className="divider-glow" />
+        <window.KitProblem />
+        <window.KitHowItWorks />
+        <window.KitFeatures />
+        <window.KitPricing onLaunch={open} />
+        <window.KitFooter onLaunch={open} />
+        {modal && <WaitlistModal onClose={() => setModal(false)} />}
+      </React.Fragment>
+    );
+  }
+
+  ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

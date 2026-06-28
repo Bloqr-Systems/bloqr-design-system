@@ -1,0 +1,47 @@
+<!-- @dsCard group="Components" viewport="700x300" name="Surfaces — Cards & Code window" subtitle="Feature tiles with icon · windowed code block" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; background: var(--bg-base); padding: 28px; font-family: var(--font-display); }
+  .grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 20px; align-items: start; }
+  .cards { display: grid; gap: 14px; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel">
+  const { Card, CodeWindow } = window.BloqrDesignSystem_097f61;
+  const C = { kw:'var(--code-keyword)', ty:'var(--code-type)', st:'var(--code-string)', cm:'var(--code-comment)', fn:'var(--code-fn)', ac:'var(--code-accent)' };
+  function Demo() {
+    return (
+      <div className="grid">
+        <div className="cards">
+          <Card icon="⚡" title="Edge-first architecture">
+            Runs natively on Cloudflare Workers. 300+ global PoPs, zero cold starts.
+          </Card>
+          <Card icon="🔄" title="11 transformations">
+            Deduplicate, validate, compress, strip comments — composable per source.
+          </Card>
+        </div>
+        <CodeWindow filename="example.ts">
+<span style={{color:C.cm}}>// Install: deno add @bloqr/compiler</span>{'\n'}
+<span style={{color:C.kw}}>import</span> {'{ '}<span style={{color:C.ty}}>FilterCompiler</span>{' }'} <span style={{color:C.kw}}>from</span> <span style={{color:C.st}}>"@bloqr/compiler"</span>;{'\n\n'}
+<span style={{color:C.kw}}>const</span> <span style={{color:C.fn}}>result</span> = <span style={{color:C.kw}}>await</span> <span style={{color:C.fn}}>compile</span>({'{'}{'\n'}
+{'  '}<span style={{color:C.fn}}>name</span>: <span style={{color:C.st}}>"My Privacy List"</span>,{'\n'}
+{'  '}<span style={{color:C.fn}}>transformations</span>: [<span style={{color:C.ac}}>Deduplicate</span>, <span style={{color:C.ac}}>Validate</span>],{'\n'}
+{'}'});
+        </CodeWindow>
+      </div>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>
+</body>
+</html>

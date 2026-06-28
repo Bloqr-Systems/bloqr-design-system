@@ -1,0 +1,55 @@
+{
+  "name": "@bloqr/design-system",
+  "version": "1.0.0",
+  "description": "Bloqr AI design system — tokens, fonts, brand guidelines, and React UI primitives for every Bloqr property (bloqr.dev, app.bloqr.dev, docs.bloqr.dev).",
+  "license": "GPL-3.0",
+  "homepage": "https://github.com/Bloqr-Systems/bloqr-design-system",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bloqr-Systems/bloqr-design-system.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Bloqr-Systems/bloqr-design-system/issues"
+  },
+  "author": "Bloqr Systems",
+  "keywords": [
+    "bloqr",
+    "design-system",
+    "design-tokens",
+    "react",
+    "privacy",
+    "ui-kit"
+  ],
+  "type": "module",
+  "sideEffects": [
+    "*.css"
+  ],
+  "exports": {
+    ".": "./components/index.js",
+    "./styles.css": "./styles.css",
+    "./tokens/*": "./tokens/*",
+    "./assets/*": "./assets/*",
+    "./fonts/*": "./fonts/*"
+  },
+  "files": [
+    "components",
+    "tokens",
+    "assets",
+    "fonts",
+    "guidelines",
+    "styles.css",
+    "readme.md",
+    "SKILL.md"
+  ],
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
