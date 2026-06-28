@@ -1,0 +1,57 @@
+<!-- @dsCard group="Components" viewport="700x380" name="Core — Buttons, Badges, Tags, Icons" subtitle="Primary CTA, outline, ghost · status pills · mono tags · Lucide icons" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; background: var(--bg-base); padding: 28px; font-family: var(--font-display); }
+  .row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 22px; }
+  .label { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--fg-3); margin: 0 0 12px; font-weight: 700; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel">
+  const { Button, Badge, Tag, Icon } = window.BloqrDesignSystem_097f61;
+  function Demo() {
+    return (
+      <div>
+        <p className="label">Buttons</p>
+        <div className="row">
+          <Button variant="primary">Get started free <span aria-hidden>→</span></Button>
+          <Button variant="outline">Read the docs</Button>
+          <Button variant="ghost">See how it works</Button>
+          <Button variant="primary" size="sm">Launch App <span aria-hidden>→</span></Button>
+          <Button variant="outline" size="sm">Docs</Button>
+        </div>
+        <p className="label">Badges</p>
+        <div className="row">
+          <Badge tone="orange" dot>Set it. Bloqr it. Forget it.</Badge>
+          <Badge tone="cyan">AI-powered</Badge>
+          <Badge tone="slate" icon="🔌">Bring your own</Badge>
+        </div>
+        <p className="label">Tags</p>
+        <div className="row">
+          <Tag>TypeScript</Tag><Tag>Pi-hole</Tag><Tag>NextDNS</Tag>
+          <Tag>AdGuard</Tag><Tag>SSE / WebSocket</Tag>
+        </div>
+        <p className="label">Icons · Lucide</p>
+        <div className="row" style={{ color: 'var(--fg-2)' }}>
+          <Icon name="layout-dashboard" /><Icon name="wrench" /><Icon name="activity" />
+          <Icon name="circle-check" color="var(--orange-500)" /><Icon name="shield" />
+          <Icon name="git-compare" /><Icon name="book-open" color="var(--cyan-500)" />
+          <Icon name="bell" /><Icon name="flask-conical" />
+        </div>
+      </div>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>
+</body>
+</html>

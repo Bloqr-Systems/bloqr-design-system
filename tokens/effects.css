@@ -1,0 +1,53 @@
+/* ──────────────────────────────────────────────────────────────
+   Bloqr — Effects: shadows, glows, motion & gradient recipes
+   Three tiers of black drop-shadow for depth; two accent glows.
+   Motion is minimal and fast — decelerating ease-out, no bounce.
+   ────────────────────────────────────────────────────────────── */
+
+:root {
+  /* ─── DROP SHADOWS (depth) ─── */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.4);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.5);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.6);
+
+  /* ─── ACCENT GLOWS ─── */
+  --shadow-orange:      0 0 24px rgba(255,85,0,0.15), 0 0 48px rgba(255,85,0,0.15);
+  --shadow-cyan:        0 0 24px rgba(0,212,255,0.12);
+  --glow-cta:           0 0 20px rgba(255,85,0,0.30);  /* primary button resting */
+  --glow-cta-hover:     0 0 32px rgba(255,85,0,0.45);  /* primary button hover */
+
+  /* ─── MOTION ─── */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1); /* @kind other */ /* decelerate, settle fast */
+  --ease-in-out: cubic-bezier(0.45, 0, 0.55, 1); /* @kind other */
+  --duration-fast: 150ms; /* @kind other */ /* hover */
+  --duration-base: 250ms; /* @kind other */ /* larger state changes */
+  --duration-slow: 400ms; /* @kind other */
+
+  /* ─── GRADIENT RECIPES ─── */
+  --hero-glow:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(255, 85, 0, 0.12), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 60%, rgba(0, 212, 255, 0.06), transparent),
+    #070B14; /* @kind color */
+  --divider-glow: linear-gradient(90deg, transparent, #FF5500 50%, transparent); /* @kind color */
+}
+
+/* Orange divider hairline — separates hero from content. */
+.divider-glow {
+  height: 1px;
+  background: var(--divider-glow);
+  opacity: 0.3;
+}
+
+/* Keyboard focus ring */
+:focus-visible {
+  outline: 2px solid var(--orange-500);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+:focus:not(:focus-visible) { outline: none; }
+
+/* Badge dot / status pulse */
+@keyframes pulse {
+  0%, 100% { opacity: 1;   transform: scale(1); }
+  50%      { opacity: 0.6; transform: scale(0.85); }
+}

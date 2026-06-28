@@ -1,0 +1,15 @@
+<!-- @dsCard group="Spacing" viewport="700x150" name="Motion & divider" subtitle="ease-out, fast 150 / base 250ms · orange divider glow." -->
+<!DOCTYPE html><html><head><meta charset="UTF-8"><link rel="stylesheet" href="../styles.css">
+<style>
+  body{margin:0;background:var(--bg-base);padding:24px;font-family:var(--font-mono);color:var(--fg-2);font-size:12px}
+  .track{height:40px;position:relative;margin:6px 0 22px;border-radius:8px;background:var(--bg-surface);border:1px solid var(--border);overflow:hidden}
+  .dot{position:absolute;top:6px;width:28px;height:28px;border-radius:50%;background:var(--orange-500);left:6px;animation:slide 2.4s var(--ease-out) infinite alternate}
+  @keyframes slide{to{left:calc(100% - 34px)}}
+  .l{color:var(--fg-3);font-size:10px}
+  .div{height:1px;background:var(--divider-glow);opacity:.3;margin-top:6px}
+</style></head><body>
+  <div class="l">cubic-bezier(0.16, 1, 0.3, 1) · fast 150ms hover · base 250ms · slow 400ms</div>
+  <div class="track"><div class="dot"></div></div>
+  <div class="l">divider-glow · linear-gradient, 0.3 opacity</div>
+  <div class="div"></div>
+</body></html>

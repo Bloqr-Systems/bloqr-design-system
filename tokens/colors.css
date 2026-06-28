@@ -1,0 +1,75 @@
+/* ──────────────────────────────────────────────────────────────
+   Bloqr — Color tokens
+   Dark-first. Deep space navy canvas. Orange primary. Cyan secondary.
+   NEVER use white or light backgrounds on a Bloqr property.
+   Base values first, then semantic aliases mapped to runtime names.
+   ────────────────────────────────────────────────────────────── */
+
+:root {
+  /* ─── BACKGROUNDS ─── */
+  --bg-base:      #070B14;  /* page canvas — deep space navy */
+  --bg-surface:   #0E1829;  /* cards, panels, sidebars */
+  --bg-elevated:  #162035;  /* hover, tooltips, code blocks */
+  --bg-overlay:   #1C2A45;  /* modals, popovers, dropdowns */
+
+  /* ─── ORANGE (primary accent) ─── */
+  --orange-500:   #FF5500;  /* CTAs, active highlights, section labels */
+  --orange-400:   #FF7033;  /* hover */
+  --orange-600:   #CC4400;  /* active / pressed */
+  --orange-900:   #1A0A00;  /* orange-tinted surface */
+  --orange-glow:  rgba(255, 85, 0, 0.15);
+  --orange-dim:   rgba(255, 85, 0, 0.12);
+
+  /* ─── CYAN (secondary accent) ─── */
+  --cyan-500:     #00D4FF;  /* links, info, secondary CTAs, logo bar 2 */
+  --cyan-400:     #33DDFF;  /* hover */
+  --cyan-900:     #001829;  /* cyan-tinted surface */
+  --cyan-glow:    rgba(0, 212, 255, 0.12);
+  --cyan-dim:     rgba(0, 212, 255, 0.10);
+
+  /* ─── FOREGROUNDS ─── */
+  --fg-1:         #F1F5F9;  /* headings, primary body */
+  --fg-2:         #94A3B8;  /* secondary body, descriptions */
+  --fg-3:         #475569;  /* muted, placeholders, disabled */
+  --fg-inverse:   #070B14;  /* text on orange / light */
+
+  /* ─── BORDERS ─── */
+  --border:        #1E2D40;  /* default */
+  --border-subtle: #162035;  /* faint dividers */
+  --border-accent: #2A4060;  /* elevated / hover */
+  --border-2:      #2A3F5A;  /* runtime alias (outline buttons) */
+
+  /* ─── SEMANTIC (product UI only — never marketing) ─── */
+  --success:      #22C55E;
+  --warning:      #F59E0B;
+  --error:        #EF4444;
+  --info:         #00D4FF;
+
+  /* ─── SEMANTIC ALIASES (intent-named) ─── */
+  --text-1:           var(--fg-1);
+  --text-2:           var(--fg-2);
+  --text-3:           var(--fg-3);
+  --text-inverse:     var(--fg-inverse);
+  --accent:           var(--orange-500);
+  --accent-hover:     var(--orange-400);
+  --accent-press:     var(--orange-600);
+  --accent-2:         var(--cyan-500);
+  --surface-page:     var(--bg-base);
+  --surface-card:     var(--bg-surface);
+  --surface-elevated: var(--bg-elevated);
+  --link:             var(--cyan-500);
+
+  /* ─── CODE SYNTAX PALETTE ─── */
+  --code-keyword: #C792EA;
+  --code-type:    #00D4FF;
+  --code-string:  #C3E88D;
+  --code-number:  #82AAFF;
+  --code-comment: #475569;
+  --code-fn:      #FFCB6B;
+  --code-accent:  #FF5500;
+
+  /* ─── CODE-WINDOW TRAFFIC LIGHTS ─── */
+  --dot-red:    #FF5F57;
+  --dot-yellow: #FEBC2E;
+  --dot-green:  #28C840;
+}
