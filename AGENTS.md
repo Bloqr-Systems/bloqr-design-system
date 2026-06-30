@@ -4,9 +4,15 @@
 
 ---
 
+## Naming
+
+**Filter** is the official name of this design system. Always refer to it as **Filter** in prose, docs, and UI copy. The npm package name stays `@bloqr/design-system` — naming the package after the system would collide with the `@bloqr` scope's other packages, so the repo/package identifiers are unchanged. See [`FILTER_INTEGRATION.md`](./FILTER_INTEGRATION.md) for how consuming repos adopt this name.
+
+---
+
 ## Repository Purpose
 
-`Bloqr-Systems/bloqr-design-system` publishes `@bloqr/design-system` — the versioned package containing CSS tokens, self-hosted fonts, SVG assets, React primitives, brand guidelines, and copy templates for the entire Bloqr suite.
+`Bloqr-Systems/bloqr-design-system` publishes `@bloqr/design-system` — known as **Filter** — the versioned package containing CSS tokens, self-hosted fonts, SVG assets, React primitives, brand guidelines, and copy templates for the entire Bloqr suite.
 
 **All UI-bearing Bloqr repositories must consume this package. No local brand copies are permitted.** This repo supersedes any `brand/`, `theme/`, or similar local directory that previously lived in consuming repos.
 
@@ -65,10 +71,11 @@ All brand prose lives in `guidelines/`:
 
 ## Rules for Consuming Repositories
 
-These rules are **MANDATORY** in any Bloqr repo with a UI surface. They are enforced in each consuming repo's `AGENTS.md` and `.github/copilot-instructions.md`.
+These rules are **MANDATORY** in any Bloqr repo with a UI surface, including all future Bloqr repositories. They are enforced in each consuming repo's `AGENTS.md` and `.github/copilot-instructions.md`.
 
 ### Must Do
 
+0. Refer to this design system as **Filter** in all docs, comments, and UI-facing copy — never "the design system" alone, "bloqr-design-system" in prose, or any other name.
 1. Add `@bloqr/design-system` as a dependency (`npm install @bloqr/design-system` or equivalent).
 2. Link `@bloqr/design-system/styles.css` as the global CSS entry point — this one file covers all tokens and `@font-face` declarations.
 3. Reference logos, favicons, and OG images from `@bloqr/design-system/assets/`.
