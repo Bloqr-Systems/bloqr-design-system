@@ -1,0 +1,86 @@
+name: PR Template Check
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize, ready_for_review]
+
+concurrency:
+  group: pr-template-check-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  pr-template-check:
+    name: PR Description Filled Out
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      pull-requests: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify PR description follows a template
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+
+            const normalize = (s) => (s || '')
+              .replace(/\r\n/g, '\n')
+              .trim()
+              .replace(/\s+/g, ' ');
+
+            const stripComments = (s) => (s || '').replace(/<!--[\s\S]*?-->/g, '');
+
+            const { data: pr } = await github.rest.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.issue.number,
+            });
+
+            const body = pr.body || '';
+
+            if (body.trim().length === 0) {
+              core.setFailed(
+                'This repository mandates filling out the PR template. Your PR description is empty — ' +
+                'open it from the "Preview" dropdown on the compare page (or restore the auto-populated ' +
+                'template) and fill in the Description, Classification, and Checklist sections.'
+              );
+              return;
+            }
+
+            const templatePaths = [
+              '.github/pull_request_template.md',
+              ...fs.existsSync('.github/PULL_REQUEST_TEMPLATE')
+                ? fs.readdirSync('.github/PULL_REQUEST_TEMPLATE')
+                    .filter((f) => f.endsWith('.md'))
+                    .map((f) => path.join('.github/PULL_REQUEST_TEMPLATE', f))
+                : [],
+            ];
+
+            const normalizedBody = normalize(body);
+            for (const templatePath of templatePaths) {
+              if (!fs.existsSync(templatePath)) continue;
+              const templateContent = fs.readFileSync(templatePath, 'utf8');
+              if (normalizedBody === normalize(templateContent)) {
+                core.setFailed(
+                  `Your PR description still exactly matches the unedited "${templatePath}" template. ` +
+                  'Replace the placeholder sections (Description, Classification, Checklist, etc.) with ' +
+                  'details about your actual change before this check can pass.'
+                );
+                return;
+              }
+            }
+
+            const meaningfulLength = stripComments(body).trim().length;
+            const MIN_LENGTH = 20;
+            if (meaningfulLength < MIN_LENGTH) {
+              core.setFailed(
+                `PR description has only ${meaningfulLength} characters of content outside template comments ` +
+                `(minimum ${MIN_LENGTH}). Please add a real description of what changed and why.`
+              );
+              return;
+            }
+
+            core.info('PR description looks filled out.');
