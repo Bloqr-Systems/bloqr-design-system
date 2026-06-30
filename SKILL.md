@@ -1,10 +1,12 @@
 ---
 name: bloqr-design
-description: Use this skill to generate well-branded interfaces and assets for Bloqr, either for production or throwaway prototypes/mocks/etc. Contains essential design guidelines, colors, type, fonts, assets, and UI kit components for prototyping.
+description: Use this skill to generate well-branded interfaces and assets for Bloqr with Filter, the design system. Contains essential design guidelines, colors, type, fonts, assets, and UI kit components for prototyping and production.
 user-invocable: true
 ---
 
-Read the `readme.md` file within this skill, and explore the other available files. The canonical home for this system is the [`Bloqr-Systems/bloqr-design-system`](https://github.com/Bloqr-Systems/bloqr-design-system) repository, published as `@bloqr/design-system`.
+**Filter** — the design system for Bloqr AI.
+
+Read the `readme.md` file within this skill, and explore the other available files. The canonical home for Filter is the [`Bloqr-Systems/bloqr-design-system`](https://github.com/Bloqr-Systems/bloqr-design-system) repository, published as `@bloqr/design-system`.
 
 Bloqr is the internet privacy suite you didn't know you needed — dark-first, vendor-agnostic, AI-curated filter lists. The brand voice is direct, witty, and a little humorous: it loves analogies and doesn't take itself too seriously. It is also honest and specific, and avoids marketing buzzwords entirely (see the forbidden-vocabulary list in `readme.md`).
 

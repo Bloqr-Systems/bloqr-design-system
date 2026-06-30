@@ -1,11 +1,12 @@
-# Bloqr Design System
+# Filter
 
-**Tagline:** The privacy you didn't know you needed.
-**Mantra:** Set it. Bloqr it. Forget it.
+**The design system for Bloqr AI.**
 
 Bloqr is the internet privacy suite you didn't know you needed. **Bloqr AI** is the all-encompassing brand for the suite; the company behind it is **Bloqr Systems**. The product is a vendor-agnostic layer that sits between your internet traffic and the ads, trackers, and malware trying to exploit it — AI-curated filter lists, multi-instance sync, and plain-English rule building, deployed to AdGuard, NextDNS, Pi-hole, uBlock, or Bloqr's own DNS. Bloqr is **infrastructure, not competition** — it makes the tools experts already use portable, intelligent, and consistent across every device.
 
-> **Naming:** always write **Bloqr** (the product) or **Bloqr AI** (the suite) — never `BLOQR`, `bloqr`, or `BloQr`. The company is **Bloqr Systems**. The original “AdBlock Compiler” / `@jk-com/adblock-compiler` name (from when this was a solo project) is **legacy** — it's now formalized under the **Bloqr Systems** org: the repo is [`Bloqr-Systems/bloqr-compiler`](https://github.com/Bloqr-Systems/bloqr-compiler) and the package is `@bloqr/compiler`. Don't use “AdBlock Compiler” or the `@jk-com` scope in new work.
+**Filter** — named for Bloqr's core function and the three-bar mark motif — is the single source of truth for every Bloqr web property. It ships design tokens, components, typography, spacing, and brand guidelines consumed by `bloqr.dev`, `app.bloqr.dev`, and `docs.bloqr.dev`.
+
+> **Naming:** always write **Bloqr** (the product) or **Bloqr AI** (the suite) — never `BLOQR`, `bloqr`, or `BloQr`. The company is **Bloqr Systems**. This design system is **Filter** — the package is `@bloqr/design-system`, the repo is [`Bloqr-Systems/bloqr-design-system`](https://github.com/Bloqr-Systems/bloqr-design-system). The original “AdBlock Compiler” / `@jk-com/adblock-compiler` name (from when this was a solo project) is **legacy** — it's now formalized under the **Bloqr Systems** org: the repo is [`Bloqr-Systems/bloqr-compiler`](https://github.com/Bloqr-Systems/bloqr-compiler) and the package is `@bloqr/compiler`. Don't use “AdBlock Compiler” or the `@jk-com` scope in new work.
 
 This project is the source of truth for every Bloqr web property. Read it before designing; the compiler ships `styles.css`, the token closure, and the `components/` bundle to any consuming project.
 
@@ -25,6 +26,12 @@ Distilled from the company's brand repository. You don't need access to build wi
 - **Domains:** `bloqr.dev` (landing) · `app.bloqr.dev` · `docs.bloqr.dev` · `api.bloqr.dev`.
 
 The font `Space Grotesk` ships as the real self-hosted variable font (`fonts/`). `Inter` and `JetBrains Mono` load from Google Fonts for preview convenience — **self-host these before production** to honor Bloqr's no-external-DNS posture.
+
+---
+
+## For Maintainers of Other Bloqr Repos
+
+**Integration guide:** [`FILTER_INTEGRATION.md`](./FILTER_INTEGRATION.md) — how to consume Filter in `bloqr-landing`, `bloqr-compiler`, and `docs.bloqr.dev`.
 
 ---
 
@@ -51,7 +58,7 @@ Components are reachable in card/kit HTML via `window.BloqrDesignSystem_097f61` 
 
 ## Distribution & versioning
 
-**This design system lives in its own repository: [`Bloqr-Systems/bloqr-design-system`](https://github.com/Bloqr-Systems/bloqr-design-system).** It is the single source of truth for the Bloqr visual language across every property, and is consumed as a versioned dependency — never copy-pasted.
+**Filter lives in its own repository: [`Bloqr-Systems/bloqr-design-system`](https://github.com/Bloqr-Systems/bloqr-design-system).** It is the single source of truth for the Bloqr visual language across every property, and is consumed as a versioned dependency — never copy-pasted.
 
 **Why standalone (not inside `bloqr-landing`):**
 - It serves three products — `bloqr.dev` (Astro/Svelte landing), `app.bloqr.dev` (Angular), and `docs.bloqr.dev` — so it can't belong to any one consumer's repo.
