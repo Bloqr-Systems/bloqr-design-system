@@ -1,7 +1,7 @@
 {
   "name": "@bloqr/design-system",
   "version": "1.0.0",
-  "description": "Bloqr AI design system — tokens, fonts, brand guidelines, and React UI primitives for every Bloqr property (bloqr.dev, app.bloqr.dev, docs.bloqr.dev).",
+  "description": "Filter — the design system for Bloqr AI. Tokens, fonts, brand guidelines, and React UI primitives for every Bloqr property (bloqr.dev, app.bloqr.dev, docs.bloqr.dev).",
   "license": "GPL-3.0",
   "homepage": "https://github.com/Bloqr-Systems/bloqr-design-system",
   "repository": {
