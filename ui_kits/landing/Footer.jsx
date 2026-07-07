@@ -19,10 +19,19 @@ function KitFooter({ onLaunch }) {
           <Logo size={22} sub="The privacy you didn't know you needed." />
           <ul style={{ display: 'flex', gap: 24, listStyle: 'none', margin: 0, padding: 0 }}>
             {['Docs', 'GitHub', 'JSR', 'Privacy', 'VPN Myths'].map((l) => (
-              <li key={l}><a href="#" style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'var(--fg-3)', textDecoration: 'none' }} onMouseEnter={(e) => e.currentTarget.style.color = 'var(--fg-2)'} onMouseLeave={(e) => e.currentTarget.style.color = 'var(--fg-3)'}>{l}</a></li>
+              <li key={l}><a href="#" style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'var(--fg-3)', textDecoration: 'underline', textDecorationColor: 'transparent', transition: 'color 0.15s, text-decoration-color 0.15s' }} onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--fg-2)'; e.currentTarget.style.textDecorationColor = 'currentColor'; }} onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--fg-3)'; e.currentTarget.style.textDecorationColor = 'transparent'; }}>{l}</a></li>
             ))}
           </ul>
-          <span style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'var(--fg-3)' }}>© 2026 Bloqr · GPL-3.0</span>
+        </div>
+        {/* Legal line — canonical wording, shared verbatim with the Angular app footer
+            (frontend/src/app/app.component.ts) and the API docs footer
+            (worker/routes/docs.routes.ts). See guidelines/BLOQR_COPY_PATTERNS.md
+            "Footer Legal Line" for the pattern this must stay in sync with. */}
+        <div style={{ maxWidth: 1200, margin: '16px auto 0', padding: '16px 24px 0', borderTop: '1px solid var(--border)', textAlign: 'center', fontFamily: 'var(--font-body)', fontSize: 13, color: 'var(--fg-3)' }}>
+          &copy; {new Date().getFullYear()} Bloqr AI&trade;, a trademark of{' '}
+          <a href="https://bloqr.systems" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--fg-2)', textDecoration: 'underline' }}>Bloqr Systems</a>.{' '}
+          Created by{' '}
+          <a href="https://jaysonknight.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--fg-2)', textDecoration: 'underline' }}>Jayson Knight</a>.
         </div>
       </footer>
     </React.Fragment>

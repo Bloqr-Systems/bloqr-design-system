@@ -200,5 +200,32 @@ Never: "Stay tuned!" (same reason).
 
 ---
 
+## 10. Footer Legal Line (Use Verbatim, All Surfaces)
+
+Every Bloqr web property — marketing landing page, the Angular app (`bloqr-compiler/frontend`),
+and the API docs site (`bloqr-compiler/worker/routes/docs.routes.ts`) — must render the same
+footer legal line, so trademark and attribution copy never drifts between surfaces:
+
+> © {year} Bloqr AI™, a trademark of [Bloqr Systems](https://bloqr.systems). Created by [Jayson Knight](https://jaysonknight.com).
+
+Rules:
+
+- `{year}` is the current year, computed at render/request time — never hardcode it.
+- "Bloqr AI™" always uses the `™` trademark glyph (`&trade;`), immediately after "Bloqr AI" with
+  no space. Do not use "®" — Bloqr AI is not a registered trademark.
+- "Bloqr Systems" and "Jayson Knight" are always links, to `https://bloqr.systems` and
+  `https://jaysonknight.com` respectively. Both open in a new tab (`target="_blank"
+  rel="noopener noreferrer"`) since the legal line lives inside the current property, not on the
+  page it's linking to.
+- Links in this line — and any other footer link — must be visually distinguishable as links even
+  before hover: a distinct color from the surrounding legal text (not just a hover-only change)
+  plus an underline, or an underline that only appears on hover is acceptable *if* the color is
+  also already distinct at rest. Color alone, with no underline at any state, is not sufficient.
+- Reference implementations: `ui_kits/landing/Footer.jsx` (landing page), `app.component.ts`'s
+  `.app-footer-shell` template (Angular app), and the `<footer>` block in `docs.routes.ts` (API
+  docs). When editing the wording or link targets in one, update all three.
+
+---
+
 *Source of truth: `Bloqr-Systems/bloqr-design-system` → `guidelines/BLOQR_COPY_PATTERNS.md`*
 *Maintained by Jayson Knight + Bloqr AI assistant*
