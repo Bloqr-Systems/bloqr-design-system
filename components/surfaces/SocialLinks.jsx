@@ -10,6 +10,8 @@ export function SocialLinks({
     { name: 'LinkedIn', url: 'https://linkedin.com/company/bloqr-ai', icon: '💼' },
     { name: 'GitHub', url: 'https://github.com/Bloqr-Systems', icon: '🐙' },
     { name: 'Twitter', url: 'https://twitter.com/bloqr_ai', icon: '𝕏' },
+    { name: 'Facebook', url: 'https://facebook.com/bloqr.ai', icon: '📘' },
+    { name: 'YouTube', url: 'https://youtube.com/@bloqr-ai', icon: '▶️' },
     { name: 'Email', url: 'mailto:contact@bloqr.dev', icon: '✉️' },
     { name: 'RSS', url: '/rss.xml', icon: '📡' },
   ],
