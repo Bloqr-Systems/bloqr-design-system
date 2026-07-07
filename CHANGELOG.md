@@ -5,6 +5,9 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+### Added
+- **Social media constants:** New `constants/social-links.ts` exports `SOCIAL_LINKS` (7 active platforms), `SOCIAL_CATEGORIES`, and helper functions (`getLink()`, `getLinksByCategory()`, `getAllLinks()`). Consuming repos (`bloqr-landing`, `bloqr-compiler`) can now import from `@bloqr/design-system/constants` instead of hardcoding URLs. Includes `SOCIAL_SUGGESTIONS` with detailed analysis of platforms to consider (Bluesky, Mastodon, TikTok, Reddit, Discord, Newsletter, Podcast) with evaluation criteria.
+
 ### Changed
 - **Naming:** The design system is officially named **Filter** (package remains `@bloqr/design-system`). Updated all references in documentation, SKILL.md, and package.json description.
 - **Integration guide:** Added `FILTER_INTEGRATION.md` with migration steps for consuming repos (`bloqr-landing`, `bloqr-compiler`, `bloqr-compiler/docs`).
