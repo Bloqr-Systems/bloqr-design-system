@@ -106,7 +106,7 @@ Bloqr writes like a senior engineer explaining something to a peer — confident
 
 **Personas.** Four audiences drive copy: the Everyday Consumer (warm, zero jargon, never says "DNS"), the Power User (peer-to-peer, transparent about data), the Developer / List Maker (show the API; never imply AI replaces a curator's judgment), and the Vendor / Partner (B2B, additive — never adversarial about AdGuard/NextDNS/Pi-hole/uBlock).
 
-**Emoji.** Rarely — one per section max, as a meta-label (🔌 BYO pill, ⚡/🔒 comparison icons, feature-card glyphs). Never in headlines or body. Prefer the three-bar mark, numeric step tokens (`01`/`02`/`03`), or a text dot (`·`).
+**Emoji.** Don't use them — anywhere, in copy or as icon-tile glyphs; they read as AI-generated boilerplate. Use the `Icon` component (Lucide) for meta-labels and comparison/feature-card icons instead (`plug`, `zap`, `lock`, etc. — see Iconography below). Prefer the three-bar mark, numeric step tokens (`01`/`02`/`03`), or a text dot (`·`) where no icon is warranted.
 
 ---
 
@@ -140,7 +140,7 @@ Bloqr writes like a senior engineer explaining something to a peer — confident
 
 **Imagery vibe.** Cool, low-key, slightly desaturated — code screenshots, UI mockups, diagrams. When photography is used (rare), it's dark and tech, never warm or lifestyle.
 
-**Card anatomy.** `#0E1829` background, 1px `#1E2D40` border, 12–16px radius, 24–32px padding. Optional 40×40px icon tile top-left (`#162035` bg, `#2A4060` border, single emoji/symbol). Title 0.95–1.15rem weight 700; body 0.825–0.9rem `--fg-2`. No shadows at rest.
+**Card anatomy.** `#0E1829` background, 1px `#1E2D40` border, 12–16px radius, 24–32px padding. Optional 40×40px icon tile top-left (`#162035` bg, `#2A4060` border, single Lucide `Icon`). Title 0.95–1.15rem weight 700; body 0.825–0.9rem `--fg-2`. No shadows at rest.
 
 **Code blocks.** `#0E1829` bg, `#1E2D40` border, 8–12px radius, JetBrains Mono 13px line-height 1.7. Mac traffic-light dots (`#FF5F57`, `#FEBC2E`, `#28C840`). Syntax palette: violet keywords, green strings, cyan types, blue numbers, slate comments, amber functions, orange enum members / HTTP verbs.
 
@@ -148,11 +148,7 @@ Bloqr writes like a senior engineer explaining something to a peer — confident
 
 ## Iconography
 
-Bloqr's icon approach is **pragmatic, not precious** — two registers, by surface.
-
-**Marketing surfaces (bloqr.dev landing):** a small set of emoji as meta-icons (🔌 BYO pill, ⚡/🔒 comparison cards, 🤖🔄📡📋🔐 on feature cards) plus Unicode glyphs. Intentional — emoji render everywhere, cost zero bytes, and signal “utility layer, not a design-trophy site.”
-
-**Product surfaces (app.bloqr.dev, dashboards, forms):** **[Lucide](https://lucide.dev)**, loaded from CDN, is the adopted icon set. 2px stroke, rounded joins, sits cleanly on the dark navy. The live app currently ships Material Symbols; the design-system direction going forward is Lucide, and the `Icon` component wraps it (see `components/core`). Load the UMD build once per page:
+**[Lucide](https://lucide.dev)** is the single adopted icon set across every surface — marketing (bloqr.dev landing) and product (app.bloqr.dev, dashboards, forms) alike. 2px stroke, rounded joins, sits cleanly on the dark navy, neutral/monochrome (inherits `currentColor` — no colored icon glyphs). No emoji anywhere, including meta-labels (BYO pill), comparison cards, and feature-card icon tiles — use the `Icon` component instead. The live app currently ships Material Symbols; the design-system direction going forward is Lucide, and the `Icon` component wraps it (see `components/core`). Load the UMD build once per page:
 
 ```html
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>

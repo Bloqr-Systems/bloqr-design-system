@@ -1,13 +1,13 @@
 /* Bloqr landing — feature grid. Composes Card. */
 function KitFeatures() {
-  const { Card } = window.BloqrDesignSystem_097f61;
+  const { Card, Icon } = window.BloqrDesignSystem_097f61;
   const feats = [
-    { icon: '⚡', title: 'Edge-first architecture', body: 'Runs natively on Cloudflare Workers. 300+ global PoPs, zero cold starts, zero server overhead.' },
-    { icon: '🤖', title: 'Plain-English rules', body: 'Type "block everything AWS" and Bloqr writes the filter. Natural-language rule building, validated for you.' },
-    { icon: '🔄', title: '11 transformations', body: 'Deduplicate, validate, compress, strip comments, convert to ASCII, invert allow rules — composable per source.' },
-    { icon: '📡', title: 'Three compilation modes', body: 'Real-time streaming via SSE, batch processing up to 10 lists, or async queue-based compilation for large jobs.' },
-    { icon: '📋', title: 'OpenAPI + TypeScript', body: 'Full OpenAPI spec, typed interfaces, and the @bloqr/compiler JSR package. Integrate cleanly in any codebase.' },
-    { icon: '🔐', title: "What's never logged", body: "We don't log DNS queries or build behavioral profiles. What isn't stored can't be leaked or subpoenaed." },
+    { icon: 'zap', title: 'Edge-first architecture', body: 'Runs natively on Cloudflare Workers. 300+ global PoPs, zero cold starts, zero server overhead.' },
+    { icon: 'bot', title: 'Plain-English rules', body: 'Type "block everything AWS" and Bloqr writes the filter. Natural-language rule building, validated for you.' },
+    { icon: 'repeat', title: '11 transformations', body: 'Deduplicate, validate, compress, strip comments, convert to ASCII, invert allow rules — composable per source.' },
+    { icon: 'radio-tower', title: 'Three compilation modes', body: 'Real-time streaming via SSE, batch processing up to 10 lists, or async queue-based compilation for large jobs.' },
+    { icon: 'clipboard-list', title: 'OpenAPI + TypeScript', body: 'Full OpenAPI spec, typed interfaces, and the @bloqr/compiler JSR package. Integrate cleanly in any codebase.' },
+    { icon: 'lock', title: "What's never logged", body: "We don't log DNS queries or build behavioral profiles. What isn't stored can't be leaked or subpoenaed." },
   ];
   return (
     <section id="features" style={{ padding: '80px 0', borderTop: '1px solid var(--border)' }}>
@@ -21,7 +21,7 @@ function KitFeatures() {
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 2, background: 'var(--border)', borderRadius: 16, overflow: 'hidden', border: '1px solid var(--border)' }}>
           {feats.map((f, i) => (
-            <Card key={i} icon={f.icon} title={f.title} style={{ borderRadius: 0, border: 'none', padding: 32 }}>{f.body}</Card>
+            <Card key={i} icon={<Icon name={f.icon} size={18} />} title={f.title} style={{ borderRadius: 0, border: 'none', padding: 32 }}>{f.body}</Card>
           ))}
         </div>
       </div>
