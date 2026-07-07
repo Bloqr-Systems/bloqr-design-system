@@ -29,7 +29,9 @@
     "./styles.css": "./styles.css",
     "./tokens/*": "./tokens/*",
     "./assets/*": "./assets/*",
-    "./fonts/*": "./fonts/*"
+    "./fonts/*": "./fonts/*",
+    "./constants": "./constants/index.ts",
+    "./constants/*": "./constants/*"
   },
   "files": [
     "components",
@@ -37,6 +39,7 @@
     "assets",
     "fonts",
     "guidelines",
+    "constants",
     "styles.css",
     "readme.md",
     "SKILL.md"
