@@ -88,7 +88,7 @@ These rules are **MANDATORY** in any Bloqr repo with a UI surface, including all
 2. **No hardcoded hex/rgb values** in component CSS — always `var(--color-*)`.
 3. **No hardcoded font-family strings** — always `var(--font-display)`, `var(--font-body)`, `var(--font-mono)`.
 4. **No light-mode or white backgrounds** — Bloqr is exclusively dark-first.
-5. **No new hand-drawn SVG icon sets** — use Lucide for product UI; emoji meta-icons are acceptable for marketing surfaces.
+5. **No new hand-drawn SVG icon sets, and no emoji anywhere** (marketing or product) — use Lucide via the `Icon` component for all icon glyphs and meta-icons.
 6. **No external font CDNs** — self-host from this package to honor Bloqr's no-external-DNS posture.
 
 ---

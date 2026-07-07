@@ -1,6 +1,6 @@
 /* Bloqr landing — hero. Badge + headline + BYO note + CTAs + stat grid. */
 function KitHero({ onLaunch }) {
-  const { Badge, Button } = window.BloqrDesignSystem_097f61;
+  const { Badge, Button, Icon } = window.BloqrDesignSystem_097f61;
   const stats = [
     { unit: 'AI', label: 'Plain-English rules' },
     { unit: 'BYO', label: 'Vendor-agnostic · no lock-in' },
@@ -21,7 +21,7 @@ function KitHero({ onLaunch }) {
           Bloqr blocks ads, trackers, and malware at the network level — across every device, every network, all at once. Tell Bloqr what you want in plain English. Bloqr handles the rest.
         </p>
         <div style={{ display: 'inline-flex', alignItems: 'flex-start', gap: 10, maxWidth: 560, margin: '0 auto 36px', padding: '14px 20px', borderRadius: 12, border: '1px solid rgba(255, 85, 0, 0.2)', background: 'rgba(255, 85, 0, 0.05)', fontFamily: 'var(--font-body)', fontSize: '0.92rem', color: 'var(--fg-2)', lineHeight: 1.5, textAlign: 'left' }}>
-          <span aria-hidden style={{ fontSize: 16 }}>🔌</span>
+          <Icon name="plug" size={16} />
           <span><strong style={{ color: 'var(--fg-1)' }}>Bring your own vendor.</strong> Happy with your current setup? Keep it. Bloqr works alongside whatever you're already running. Starting fresh? We've got you covered. Bring your own. Or use ours.</span>
         </div>
         <div style={{ display: 'flex', justifyContent: 'center', gap: 12, flexWrap: 'wrap', marginBottom: 64 }}>

@@ -1,5 +1,6 @@
 /* Bloqr landing — the problem: VPN vs Bloqr comparison. */
 function KitProblem() {
+  const { Icon } = window.BloqrDesignSystem_097f61;
   const bad = [
     '$10–20/month subscription fees',
     'All traffic routed through third-party servers',
@@ -19,7 +20,7 @@ function KitProblem() {
   const Col = ({ tag, tagColor, icon, iconBg, title, items, check }) => (
     <div style={{ background: 'var(--bg-surface)', padding: 40, position: 'relative' }}>
       <span style={{ position: 'absolute', top: 20, right: 20, fontFamily: 'var(--font-mono)', fontSize: 10, letterSpacing: '0.15em', color: tagColor, fontWeight: 600 }}>{tag}</span>
-      <div style={{ width: 40, height: 40, borderRadius: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 20, marginBottom: 24, background: iconBg }}>{icon}</div>
+      <div style={{ width: 40, height: 40, borderRadius: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 24, background: iconBg }}><Icon name={icon} size={20} /></div>
       <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.2rem', fontWeight: 700, margin: '0 0 16px', color: 'var(--fg-1)', letterSpacing: '-0.01em' }}>{title}</h3>
       <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
         {items.map((t, i) => (
@@ -40,8 +41,8 @@ function KitProblem() {
           <p style={{ fontFamily: 'var(--font-body)', fontSize: '1.05rem', color: 'var(--fg-2)', maxWidth: 560, margin: '0 auto', lineHeight: 1.65 }}>A consumer VPN is a proxy server with a marketing budget. For the use case most VPN buyers actually have — blocking ads, trackers, and malware — there's a better tool.</p>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 2, borderRadius: 16, overflow: 'hidden', border: '1px solid var(--border)', background: 'var(--border)' }}>
-          <Col tag="CONSUMER VPN" tagColor="var(--fg-3)" icon="🔒" iconBg="rgba(239,68,68,0.12)" title="The VPN approach" items={bad} check={false} />
-          <Col tag="BLOQR" tagColor="var(--orange-500)" icon="⚡" iconBg="var(--orange-dim)" title="The Bloqr approach" items={good} check={true} />
+          <Col tag="CONSUMER VPN" tagColor="var(--fg-3)" icon="lock" iconBg="rgba(239,68,68,0.12)" title="The VPN approach" items={bad} check={false} />
+          <Col tag="BLOQR" tagColor="var(--orange-500)" icon="zap" iconBg="var(--orange-dim)" title="The Bloqr approach" items={good} check={true} />
         </div>
       </div>
     </section>

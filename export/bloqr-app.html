@@ -22239,30 +22239,31 @@ try { (() => {
 /* Bloqr landing — feature grid. Composes Card. */
 function KitFeatures() {
   const {
-    Card
+    Card,
+    Icon
   } = window.BloqrDesignSystem_097f61;
   const feats = [{
-    icon: '⚡',
+    icon: 'zap',
     title: 'Edge-first architecture',
     body: 'Runs natively on Cloudflare Workers. 300+ global PoPs, zero cold starts, zero server overhead.'
   }, {
-    icon: '🤖',
+    icon: 'bot',
     title: 'Plain-English rules',
     body: 'Type "block everything AWS" and Bloqr writes the filter. Natural-language rule building, validated for you.'
   }, {
-    icon: '🔄',
+    icon: 'repeat',
     title: '11 transformations',
     body: 'Deduplicate, validate, compress, strip comments, convert to ASCII, invert allow rules — composable per source.'
   }, {
-    icon: '📡',
+    icon: 'radio-tower',
     title: 'Three compilation modes',
     body: 'Real-time streaming via SSE, batch processing up to 10 lists, or async queue-based compilation for large jobs.'
   }, {
-    icon: '📋',
+    icon: 'clipboard-list',
     title: 'OpenAPI + TypeScript',
     body: 'Full OpenAPI spec, typed interfaces, and the @bloqr/compiler JSR package. Integrate cleanly in any codebase.'
   }, {
-    icon: '🔐',
+    icon: 'lock',
     title: "What's never logged",
     body: "We don't log DNS queries or build behavioral profiles. What isn't stored can't be leaked or subpoenaed."
   }];
@@ -22328,7 +22329,7 @@ function KitFeatures() {
     }
   }, feats.map((f, i) => /*#__PURE__*/React.createElement(Card, {
     key: i,
-    icon: f.icon,
+    icon: /*#__PURE__*/React.createElement(Icon, { name: f.icon, size: 18 }),
     title: f.title,
     style: {
       borderRadius: 0,

@@ -8,6 +8,7 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 ### Changed
 - **Naming:** The design system is officially named **Filter** (package remains `@bloqr/design-system`). Updated all references in documentation, SKILL.md, and package.json description.
 - **Integration guide:** Added `FILTER_INTEGRATION.md` with migration steps for consuming repos (`bloqr-landing`, `bloqr-compiler`, `bloqr-compiler/docs`).
+- **Iconography:** Replaced emoji-as-icon glyphs (feature cards, comparison cards, BYO badge) with the `Icon` component (Lucide) across `ui_kits/`, `components/`, and `export/bloqr-app.html`. AGENTS.md and README no longer endorse emoji for marketing surfaces — Lucide is now the single icon set for all surfaces.
 
 ## [1.0.0] — 2026-06-28
 
