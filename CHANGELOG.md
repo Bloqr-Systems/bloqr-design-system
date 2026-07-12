@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 ## [Unreleased]
 
 ### Added
+- **Operator console design contract:** New `guidelines/OPERATOR_CONSOLE.md` — the Filter design contract for Bloqr's administrative surfaces (the `app.bloqr.dev/admin` user panel and the `admin.bloqr.dev` operator console served by the `bloqr-admin` worker). Covers surface hierarchy, status/role semantics mapped to the semantic palette, the destructive "danger zone" pattern, density/spacing for data-heavy UI, and accessibility — all in terms of existing Filter tokens (no new tokens). Listed in AGENTS.md's brand-documentation table.
 - **Social media constants:** New `constants/social-links.ts` exports `SOCIAL_LINKS` (7 active platforms), `SOCIAL_CATEGORIES`, and helper functions (`getLink()`, `getLinksByCategory()`, `getAllLinks()`). Consuming repos (`bloqr-landing`, `bloqr-compiler`) can now import from `@bloqr/design-system/constants` instead of hardcoding URLs. Includes `SOCIAL_SUGGESTIONS` with detailed analysis of platforms to consider (Bluesky, Mastodon, TikTok, Reddit, Discord, Newsletter, Podcast) with evaluation criteria.
 
 ### Changed

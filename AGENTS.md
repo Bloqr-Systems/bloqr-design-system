@@ -52,6 +52,7 @@ All brand prose lives in `guidelines/`:
 | `guidelines/BLOQR_DESIGN_LANGUAGE.md` | Product strategy, four personas, voice per audience, page architecture |
 | `guidelines/BLOQR_COPY_PATTERNS.md` | Copy templates, approved mantras, forbidden phrases, error/empty-state copy |
 | `guidelines/BLOQR_ETHOS.md` | Mission, philosophy, user promise, origin story |
+| `guidelines/OPERATOR_CONSOLE.md` | Design contract for admin surfaces — the `app.bloqr.dev/admin` user panel and the `admin.bloqr.dev` operator console |
 
 **Read `guidelines/BLOQR_BRAND_HANDOFF.md` before implementing any Bloqr UI.**
 
